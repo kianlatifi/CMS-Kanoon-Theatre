@@ -35,4 +35,11 @@ class Comment extends Admin{
         }
         $this->redirectBack();
     }
+
+    public function delete($id)
+    {
+        $db = new DataBase();
+        $db->delete('comments',$id);
+        $this->redirectBack();
+    }
 }

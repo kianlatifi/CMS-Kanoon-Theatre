@@ -34,7 +34,8 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
                             <a role="button" class="btn btn-sm btn-success text-white" href="http://localhost/comment/approved/<?php echo $comment['id'] ?>">click to approved</a>
                         <?php } else { ?>
                             <a role="button" class="btn btn-sm btn-warning text-white" href="http://localhost/comment/approved/<?php echo $comment['id'] ?>">click to not approved</a>
-                        <?php } ?>
+                            <?php } ?>
+                        <a role="button" class="btn btn-sm btn-danger text-white" href="http://localhost/comment/delete/<?php echo $comment['id'] ?>">Delete</a>
                     </td>
                 </tr>
             <?php } ?>

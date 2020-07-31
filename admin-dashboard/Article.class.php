@@ -86,4 +86,27 @@ class Article extends Admin
         $this->removeImage($article['image']);
         $this->redirectBack();
     }
+
+    public function status($id)
+    {
+        $db = new DataBase();
+        $article = $db->select("SELECT * FROM `articles` WHERE (`id` = ?); ",[$id])->fetch();
+        if ($article['status'] == 'disable') {
+            $db->update('articles',$id,['status'],['enable']);
+        } else {
+            $db->update('articles',$id,['status'],['disable']);
+        }
+        $this->redirectBack();
+    }
+    public function important($id)
+    {
+        $db = new DataBase();
+        $article = $db->select("SELECT * FROM `articles` WHERE (`id` = ?); ",[$id])->fetch();
+        if ($article['status'] == 'important') {
+            $db->update('articles',$id,['status'],['enable']);
+        } else {
+            $db->update('articles',$id,['status'],['important']);
+        }
+        $this->redirectBack();
+    }
 }

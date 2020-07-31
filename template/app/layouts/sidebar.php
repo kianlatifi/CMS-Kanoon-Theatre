@@ -1,24 +1,26 @@
 <aside class="sidebar">
     <section class="sidebar-item">
         <ul class="sidebar-list">
-            <?php foreach($categories as $category) {?>
-            <li><a href="http://localhost/show-category/<?php echo $category['id'] ; ?>"><b><?php echo $category['name'] ; ?></b></a></li>
+            <?php foreach ($categories as $category) { ?>
+                <li><a href="http://localhost/show-category/<?php echo $category['id']; ?>"><b><?php echo $category['name']; ?></b></a></li>
             <?php } ?>
         </ul>
     </section>
     <section class="sidebar-item">
         <h2 class="title">پرطرفدارها</h2>
-        <?php foreach($sidebarPopularArticles as $article) { ?>
+        <?php foreach ($sidebarPopularArticles as $article) { ?>
 
             <section class="popular-post">
-                <img class="popular-post-img" src="http://localhost/<?php echo $article['image'] ?>" alt="">
+                <a href="http://localhost/show-article/<?php echo $article['id'] ?>">
+                    <img class="popular-post-img" src="http://localhost/<?php echo $article['image'] ?>" alt="">
+                </a>
                 <section class="popular-post-title">
                     <h3>
                         <a href="http://localhost/show-article/<?php echo $article['id'] ?>"><b><?php echo $article['title'] ?></b></a>
                     </h3>
                     <ul class="info-bar">
-                        <li class=""><span class="text-muted">by</span> <a href="#" class="color-black"><b><?php echo $article['username'] ; ?></b></a>
-                            <span class="text-muted"><?php echo date("M d, Y",strtotime($article['created_at'])) ; ?></span></li>
+                        <li class=""><span class="text-muted">by</span> <a href="#" class="color-black"><b><?php echo $article['username']; ?></b></a>
+                            <span class="text-muted"><?php echo date("M d, Y", strtotime($article['created_at'])); ?></span></li>
                     </ul>
                 </section>
                 <section class="clear-fix"></section>
@@ -27,4 +29,5 @@
     </section>
 
 
-</aside><!--end of sidebar-->
+</aside>
+<!--end of sidebar-->

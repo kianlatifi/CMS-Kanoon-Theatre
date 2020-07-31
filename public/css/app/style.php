@@ -1,11 +1,18 @@
 /* <?php
 header("Content-type: text/css"); 
 ?> */
+@font-face {
+    font-family: "Yekan";
+    src:url('/public/fonts/Yekan.eot');
+    src:url('/public/fonts/Yekan.ttf');
+    src:url('/public/fonts/Yekan.svg');
+    src:url('/public/fonts/Yekan.woff');
+}
 /* PRIMARY STYLES */
 *{
     margin: 0px auto;
     font-size: 14px;
-    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Yekan' ,'Encode Sans Expanded', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -136,7 +143,38 @@ b{
 
 
 /* header */
-
+.login , .register , .logout{
+    cursor: pointer;
+    background-color: #00c851;
+    padding: 10px 20px;
+    line-height: 80px;
+    margin-left: 5px;
+    margin-right: 0px;
+    font-weight: 700;
+    color: #fff ;
+}
+.register{
+    margin-left: 15px;
+}
+.register:hover{
+    outline: 1px groove #00c85130;
+}
+.login{
+    background-color: white;
+    border: 1px solid #00c851;
+    color: #00c851;
+}
+.login:hover{
+    outline: 1px groove #00c85130;
+}
+.logout{
+    background-color: white;
+    border: 1px solid #ff3547;
+    color: #ff3547;
+}
+.logout:hover{
+    outline: 1px groove #ff354730;
+}
 .header{
     font-weight: 600;
     /*height: 80px;*/
@@ -221,6 +259,9 @@ b{
         line-height: 70px;
         padding: 0px 5px;
     }
+    .login , .register{
+    line-height: 70px;
+}
 }
 
 @media  (max-width: 767.98px){
@@ -248,6 +289,9 @@ b{
     .header-menu-item-link{
         padding: 0px 5px;
     }
+    .login , .register{
+    line-height: 63px;
+}
 }
 
 @media  (max-width:575.98px){
@@ -261,6 +305,9 @@ b{
     .header-menu-item-link{
         padding: 0 5px;
     }
+    .login , .register{
+    line-height: 60px;
+}
 }
 /* end of header*/
 
@@ -531,8 +578,8 @@ article > p {
     margin-bottom: 20px;
 }
 .popular-post-img{
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 70px;
     float: right;
 }
 .popular-post-title{
@@ -586,9 +633,17 @@ article > p {
         margin-bottom: 30px;
     }
     .sidebar{
-        margin: 0px auto;
-        float: none;
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    }
+    .sidebar-item{
         width: 50%;
+        margin-bottom: 40px;
+        float: left;
+    }
+    .sidebar-list > li{
+        width: 95%;
     }
 }
 @media  (max-width: 767.98px){
@@ -603,6 +658,17 @@ article > p {
         width: 100%;
         float: none;
         margin-right: 0px;
+    }
+    .sidebar{
+    float: none;
+    width: 95%;
+    }
+    .sidebar-item{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .sidebar-list > li{
+        width: 100%;
     }
 }
 /* end of main section*/
@@ -785,6 +851,7 @@ article > p {
 
 
 .comment{
+    direction: rtl;
     display: block;
     width: calc(100% - 20px);
     margin: 8px 0px;
@@ -812,6 +879,7 @@ article > p {
     border: 1px solid #DEDEDE;
     padding: 10px;
     margin-top: 4px;
+    direction: rtl;
 }
 .comment-box-header{
     font-size: 14px;
@@ -819,7 +887,7 @@ article > p {
     margin-bottom: 6px;
 }
 .comment-box-date{
-    float: right;
+    float: left;
     color: #ACACAC;
     font-weight: normal;
     font-size: 10px;

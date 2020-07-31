@@ -1,3 +1,22 @@
+.reg{
+    display: flex;
+    align-items: center;
+}
+.login , .register{
+    cursor: pointer;
+    background-color: green;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
 
 .bg-gradiant-green-blue{
     background: rgb(0,168,249);

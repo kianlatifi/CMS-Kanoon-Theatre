@@ -23,6 +23,8 @@ use AdminDashboard\Dashboard;
 // $createDB = new CreateDB();
 // $createDB->run();
 
+$domein = "/localhost";
+
 function uri($uri,$class,$method,$requestMethod='GET'){
     $values=array();
     $subURIs=explode('/',$uri);
@@ -32,7 +34,7 @@ function uri($uri,$class,$method,$requestMethod='GET'){
         $request_uri=array_filter($request_uri);
     }
     if ($request_uri[0]=="" or $request_uri[0]=="/")
-    $request_uri[0] = "home";
+        $request_uri[0] = "home";
 
     $breakk=false;
     if(sizeof($request_uri)==sizeof($subURIs) and $_SERVER['REQUEST_METHOD'] == $requestMethod){
@@ -116,6 +118,8 @@ uri('article/store','Article','store','POST');
 uri('article/edit/{id}','Article','edit');
 uri('article/update/{id}','Article','update','POST');
 uri('article/delete/{id}','Article','delete');
+uri('article/status/{id}','Article','status');
+uri('article/important/{id}','Article','important');
 
 // menu
 uri('menu','Menu','index');
@@ -142,6 +146,7 @@ uri('web-setting/store','WebSetting','store','POST');
 uri('comment','Comment','index');
 uri('comment/show/{id}','Comment','show');
 uri('comment/approved/{id}','Comment','approved');
+uri('comment/delete/{id}','Comment','delete');
 
 // auth
 uri('login','Auth','login');

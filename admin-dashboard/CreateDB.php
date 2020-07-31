@@ -35,7 +35,7 @@ class CreateDB extends DataBase
             `user_id` int(11) NOT NULL,
             `cat_id` int(11) NOT NULL,
             `image` varchar(200) COLLATE utf8_persian_ci NOT NULL,
-            `status` enum('disable','enable') COLLATE utf8_persian_ci NOT NULL DEFAULT 'disable',
+            `status` enum('disable','enable','important') COLLATE utf8_persian_ci NOT NULL DEFAULT 'disable',
             `created_at` datetime NOT NULL,
             `updated_at` datetime DEFAULT NULL,
             PRIMARY KEY (`id`),

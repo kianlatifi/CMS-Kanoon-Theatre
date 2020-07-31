@@ -15,6 +15,7 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             <h3 class="article-title">
                                 <a href="http://localhost/show-article/<?php echo $article['id'] ; ?>"><?php echo $article['title'] ; ?></a>
                             </h3>
+                            <p><?php echo $article['summary'] ; ?></p>
                             <ul class="info-bar">
                                 <li class=""><span class="text-muted">by</span> <a href="#" class="color-black"><b><?php echo $article['username'] ; ?></b></a>
                                     <span class="text-muted"><?php echo date("M d, Y",strtotime($article['created_at'])) ; ?></span></li>

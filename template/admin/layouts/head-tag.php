@@ -6,7 +6,6 @@
         $db = new \DataBase\DataBase();
     }
     $setting = $db->select("SELECT * FROM `websetting`; ")->fetch();
-
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -38,7 +37,7 @@
                 <?php if ($unseenComments['COUNT(*)']) { ?><span class="badge badge-danger"><?php echo $unseenComments['COUNT(*)'] ?></span><?php } ?> </a>
                 <i class="fas fa-user"></i>
                 <?php echo $username['username'] ?>
-                <a class="px-3 text-dark" href="http://localhost/logout">logout</a>
+                <a class="px-3 text-dark" href="http://localhost/log-out">logout</a>
             <!-- <span class="dropdown">
                 <a class="dropdown-toggle text-decoration-none text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                 
